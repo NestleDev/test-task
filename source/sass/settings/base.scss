@@ -7,7 +7,7 @@ html {
 body {
   @include base-font(400);
   font-size: $base-size;
-  line-height: 1.42;
+  line-height: $base-line;
   color: $base-color;
   background-color: $base-bg;
   -webkit-font-smoothing: antialiased;
@@ -65,10 +65,11 @@ textarea {
 
 .wrapper {
   position: relative;
-  height: 100%;
+  min-height: 100%;
 }
 
 .container{
   width: 95%;
   max-width: $container;
+  margin: 0 auto;
 }
