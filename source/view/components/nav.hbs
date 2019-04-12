@@ -1,0 +1,14 @@
+<nav class="{{className}}">
+    <ul class="{{className}}__list">
+        {{#each items}}
+        <li class="{{../className}}__item">
+            <a href="{{url}}" class="{{../className}}__link">
+                {{#if icon}}
+                {{> icon name=icon className=../className}}
+                {{/if}}
+                <span>{{name}}</span>
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+</nav>
