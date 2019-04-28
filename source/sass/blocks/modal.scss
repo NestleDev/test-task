@@ -1,0 +1,44 @@
+.modal-menu {
+  position: absolute;
+  background-color: rgba($white, 0.9);
+  padding: 30px 30px 20px 20px;
+  transition: 0.5s;
+  &__close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: $black;
+    cursor: pointer;
+    padding: 5px;
+  }
+}
+
+#users-menu {
+  .modal-menu {
+    left: -100%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+#messages-menu {
+  .modal-menu {
+    right: -300px;
+    top: 0;
+    height: 100%;
+    width: 300px;
+  }
+}
+
+#users-menu.modal-active {
+  .modal-menu {
+    left: 0;
+  }
+}
+
+#messages-menu.modal-active {
+  .modal-menu {
+    right: 0;
+  }
+}

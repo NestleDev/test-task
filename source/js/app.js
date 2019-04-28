@@ -1,2 +1,3 @@
-console.log('hello')
-console.log($('.wrapper'));
+import Chat from './modules/chat';
+
+new Chat();

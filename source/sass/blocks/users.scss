@@ -1,0 +1,14 @@
+.users {
+  overflow: hidden;
+  background-color: #2f3136;
+  width: 20%;
+  height: 100%;
+  padding-top: 40px;
+  overflow-y: auto;
+  position: relative;
+  &__item {
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+  }
+}
