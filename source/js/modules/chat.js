@@ -84,7 +84,9 @@ export default class {
   }
 
   getUsers() {
-    return fetch("/test-task/dist/database/users.json")
+    return fetch(
+      "https://nestledev.github.io/test-task/dist/database/users.json"
+    )
       .then(response => response.json())
       .then(data => data);
   }
