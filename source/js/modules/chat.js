@@ -1,5 +1,6 @@
 import "babel-polyfill";
 import Modal from "./modal";
+import { render } from "./render";
 
 export default class {
   constructor() {
@@ -61,7 +62,7 @@ export default class {
     if (message) {
       this.messages.push({ message });
       localStorage.setItem("messages", JSON.stringify(this.messages));
-      this.messagesContainer.innerHTML += this.render("messages", {
+      this.messagesContainer.innerHTML += render("messages", {
         messages: [{ message }]
       });
     }
@@ -71,13 +72,13 @@ export default class {
     const users = await this.getUsers();
 
     if (users) {
-      this.usersContainer.innerHTML = this.render("users", users);
+      this.usersContainer.innerHTML = render("users", users);
     }
   }
 
   renderMessages() {
     if (this.messages) {
-      this.messagesContainer.innerHTML = this.render("messages", {
+      this.messagesContainer.innerHTML = render("messages", {
         messages: this.messages
       });
     }
@@ -89,10 +90,6 @@ export default class {
     )
       .then(response => response.json())
       .then(data => data);
-  }
-
-  render(template, data) {
-    return require(`../../view/templates/${template}.hbs`)(data);
   }
 
   randomNumber(size = 100) {

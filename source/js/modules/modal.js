@@ -1,3 +1,5 @@
+import { render } from "./render";
+
 export default class {
   constructor(selector, data) {
     this.conteiner = document.querySelector(selector);
@@ -7,7 +9,7 @@ export default class {
 
   renderModal(data) {
     if (data) {
-      this.conteiner.innerHTML = this.render("modal-menu", { menu: data });
+      this.conteiner.innerHTML = render("modal-menu", { menu: data });
       setTimeout(() => {
         this.conteiner.classList.add(`modal-active`);
       }, 0);
@@ -19,9 +21,5 @@ export default class {
         { once: true }
       );
     }
-  }
-
-  render(template, data) {
-    return require(`../../view/templates/${template}.hbs`)(data);
   }
 }
