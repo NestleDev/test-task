@@ -84,7 +84,7 @@ export default class {
   }
 
   getUsers() {
-    return fetch("/database/users.json")
+    return fetch("/dist/database/users.json")
       .then(response => response.json())
       .then(data => data);
   }
